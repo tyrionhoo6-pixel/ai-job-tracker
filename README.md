@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# 🚀 Applied.ai - AI-Powered Job Application Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An intelligent, full-stack client-side dashboard designed to organize, analyze, and supercharge your job hunting workflow. Built with **React 19**, **Vite 6**, and **Supabase**, featuring an encrypted client-side PDF parser and local AI matching algorithms.
 
-Currently, two official plugins are available:
+## ✨ Core Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **📊 Recruitment Conversion Analytics**: Real-time business intelligence metrics including pipeline conversion rates, interview status bar charts, average market compensation tracking, and total active pipeline contract valuation.
+- **📑 Secure Client-Side Resume Indexing**: Integrates Mozilla `pdfjs-dist` to natively deconstruct binary PDF documents directly inside the sandbox worker, ensuring no token limits are reached and absolute privacy.
+- **🧠 Local Matrix Analysis (AI Scan)**: Instantly calculates semantic overlap scores between your resume keywords and active Job Descriptions (JD).
+- **🎯 Co-Pilot Match Optimization**: Automatically extracts matched tags, exposes severe gaps (missing framework implementations), and formulates strategic advice.
+- **✉️ Automated Cold Email Engine**: Generates ready-to-copy, personalized self-nominations tailored specifically to the targeted company and title.
+- **🗂️ Dual View Experience**: Seamless toggling between standard Data Grid and dynamic Kanban board pipelines with instant status persistence.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend Core**: React 19 (Hooks, Context), TypeScript 5.7
+- **Build Toolchain**: Vite 6, PostCSS, ESLint
+- **Database / Backend**: Supabase (PostgreSQL)
+- **Styling**: Tailwind CSS v4, Lucide React (Icons)
+- **Core Engine Libraries**: Recharts (Analytics Data Vis), `pdfjs-dist` v4 (Binary Parser Engine)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Prerequisites
+Ensure you have **Node.js** (v18 or higher) and **npm** installed.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 2. Environment Configuration
+Create a `.env` file in the root directory and securely map your Supabase credentials:
+```env
+VITE_SUPABASE_URL=your_supabase_project_url
+VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+(Note: .env is fully abstracted inside .gitignore and will never be pushed to version control.)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Installation
+Clone the repository and install dependencies clean:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Bash
+npm install
+4. Local Development
+Spin up the hot-reloading Vite server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Bash
+npm run dev
+5. Production Compilation & Preview
+Compile types and build optimized static assets:
+
+Bash
+# Build the production bundle
+npm run build
+
+# Preview the local production build
+npm run preview
+📂 Project Architecture Brief
+Plaintext
+src/
+├── components/
+│   └── Dashboard.tsx      # Main application engine (Analytics, AI Scanners, Grid/Kanban views)
+├── lib/
+│   └── supabase.ts       # Supabase initializing configuration client
+├── App.tsx               # Main application entry layout routing wrapper
+└── main.tsx              # React 19 concurrent DOM anchor initialization
+🔒 Security & Privacy Notice
+All resume parsing and token matching behaviors are carried out entirely client-side inside your local browser sandbox via compiled workers. No raw PDF content or personal information is shared or harvested.
