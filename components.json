@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": false,
+  "tsx": true,
+  "baseColor": "zinc",
+  "css": "src/index.css",
+  "componentsDir": "src/components/ui",
+  "utils": "src/lib/utils",
+  "aliases": {
+    "@": "./src"
+  }
+}

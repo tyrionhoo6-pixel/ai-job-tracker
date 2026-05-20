@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* ==========================================
+   🌟 精准干掉 Kanban 白色滚动条 
+   ========================================== */
+
+/* 方案 A：让它隐形（最符合全面屏黑胶质感，推荐） */
+/* .custom-scrollbar::-webkit-scrollbar {
+  display: none !important;
+} */
+
+.custom-scrollbar {
+  -ms-overflow-style: none !important;  /* IE 和旧版 Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+
+/* 如果你以后想保留一条极细的暗色调科技感滚动条，
+   可以把上面的 display: none 删掉，用下面这段注释掉的代码： */
+   
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px !important;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 99px !important;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
